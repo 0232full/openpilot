@@ -121,8 +121,8 @@ class LongControl:
       self.reset()
 
     else:  # LongCtrlState.pid
-      #error = a_target_now - CS.aEgo
-      error = v_target_now - CS.vEgo
+      error = a_target_ff - CS.aEgo
+      #error = v_target_now - CS.vEgo
       output_accel = self.pid.update(error, speed=CS.vEgo,
                                      feedforward=a_target_ff)
 
